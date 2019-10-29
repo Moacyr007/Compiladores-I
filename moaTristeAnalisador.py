@@ -12,14 +12,36 @@ tamanhoEntrada= len(entrada)
 
 a = 0
 while a < tamanhoEntrada-1:
+
+    #comentario //
+     
+    if entrada[a] == '/' and entrada[a+1] == '/':
+        print("ENTROU AQUI AAAAAAA")
+        while entrada[a] != "\n":
+            print(entrada[a], end ='')
+            a+=1
+        
+        print(", comentario")
+
+    #comentario /* */
+    if entrada[a] == '/' and entrada[a+1] == '*':
+        print(entrada[a], end ='')
+        print(entrada[a+1], end ='')
+        a += 2
+        while entrada[a] != '*' and entrada[a+1] != '/':
+            print(entrada[a], end ='')
+            a+=1
+        print("*/ , comentario")
+  
+   
+
   #if
     if entrada[a] == 'i' and entrada[a+1] == 'f':
         print('palavra reservada: if')
         a = a + 3
     
-      #identificadores
+    #identificadores
     if entrada[a] in numeros or entrada[a] in lentras:
-        inicio = a
         while entrada[a] in numeros or entrada[a] in lentras:
             print(entrada[a], end ='')
             a += 1
@@ -28,29 +50,3 @@ while a < tamanhoEntrada-1:
   
 
     a += 1
-
-'''
-qtdeElementos = len(entradaSeparada)
-
-a=0
-
-
-#printar comentarios separados por /* */ 
-
-while a != qtdeElementos:
-    if entradaSeparada[a] == 'if':
-        print (entradaSeparada[a], ", palavra reservada")
-    if entradaSeparada[a] == '/*':
-        inicioComentario = a
-        for b in range(a,qtdeElementos):
-            if entradaSeparada[b] == '*/\n{\n':
-                fimComentario= b+1
-        
-        for c in range(inicioComentario,fimComentario):
-            print(entradaSeparada[c], end = '')
-        print(", comentario")
-        
-    a += 1
-
-
-'''
