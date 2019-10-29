@@ -9,11 +9,9 @@ numeros = '0123456789'
 
 entrada = entrada.replace(' ', '')
 tamanhoEntrada= len(entrada)
-
 a = 0
 while a < tamanhoEntrada-1:
-
-    #comentario //
+       #comentario //
      
     if entrada[a] == '/' and entrada[a+1] == '/':
         while entrada[a] != "\n":
@@ -26,12 +24,25 @@ while a < tamanhoEntrada-1:
     if entrada[a] == '/' and entrada[a+1] == '*':
         print(entrada[a], end ='')
         print(entrada[a+1], end ='')
+        
         a += 2
         while entrada[a] != '*' and entrada[a+1] != '/':
             print(entrada[a], end ='')
             a+=1
         print("*/ , comentario")
-          
+        
+        a += 2
+    
+     #abre chaves
+    if entrada[a] == '{':
+        print(entrada[a],',  abre chaves')
+        a = a + 1
+   
+    #fecha chave
+    if entrada[a] == '}':
+        print(entrada[a], ',  fecha chaves')
+        a = a + 1
+
     #operador de atruibuição =
     if entrada[a] == '=':
         print('=, atribuição')
@@ -57,15 +68,6 @@ while a < tamanhoEntrada-1:
         print(entrada[a], ',  fecha parênteses')
         a = a + 1
     
-    #abre chaves
-    if entrada[a] == '{':
-        print(entrada[a], ',  abre chaves')
-        a = a + 1
-   
-    #fecha chave
-    if entrada[a] == '}':
-        print(entrada[a], ',  fecha chaves')
-        a = a + 1
     
     #if
     if entrada[a] == 'i' and entrada[a+1] == 'f':
@@ -90,6 +92,8 @@ while a < tamanhoEntrada-1:
             a += 1
         print(', identificador')
 
+    if entrada[a] == '\n':
+        a+=1
     
 
 
