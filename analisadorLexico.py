@@ -1,4 +1,9 @@
-f = open('D:\Projetos\Compiladores 1\Analisador lexico\entradaAva.txt', 'r')
+print("Digite o local do arquivo de entrada:")
+path = input()
+
+#path = 'D:\Projetos\Compiladores 1\Analisador lexico\entradaAva.txt'
+
+f = open(path, 'r')
 entrada = f.read()
 
 palavrasReservadas= ['if']
