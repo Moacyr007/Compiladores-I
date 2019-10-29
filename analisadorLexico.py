@@ -37,10 +37,28 @@ while a < tamanhoEntrada-1:
         print('=, atribuição')
         a = a + 1
 
+      
+    #operadores aritiméticos  +, -, *, /
+    if entrada[a] == '+' or entrada[a] == '-' or entrada[a] == '/' or entrada[a] == '*':
+        print(entrada[a], ',  operador aritimético')
+        a = a + 1
+      
+    #abre parênteses
+    if entrada[a] == '(':
+        print(entrada[a], ',  abre parênteses')
+        a = a + 1
+   
+    #fecha parênteses
+    if entrada[a] == ')':
+        print(entrada[a], ',  fecha parênteses')
+        a = a + 1
+    
+
+
     #if
     if entrada[a] == 'i' and entrada[a+1] == 'f':
         print('palavra reservada: if')
-        a = a + 3
+        a = a + 2
     
     #identificadores
     if entrada[a] in numeros or entrada[a] in lentras:
