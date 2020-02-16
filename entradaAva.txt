@@ -1,5 +1,6 @@
-if (a9 < b) /* operacao relacional */
-{
- soma = 4.9 + 0.5 // atribuicao
- i = i * 1
- }
+var foo, bar: integer;
+    foobar: real
+
+foobar := foo + bar
+
+if foo + bar then foo := bar
