@@ -1,5 +1,5 @@
 def analisadorLexico(entrada):
-    diconario = {
+    dicionario = {
     "var" : "declaracao",
     "integer": "tipo",
     "real": "tipo",
@@ -24,7 +24,7 @@ def analisadorLexico(entrada):
         
         if entrada[a] == ':' and entrada[a+1] == '=':
             token = ':='
-            tokens.append([token, diconario[token]])
+            tokens.append([token, dicionario[token]])
             a+=2
         token = ''
         
@@ -33,14 +33,14 @@ def analisadorLexico(entrada):
             a += 1
         if a == finalEntrada:
             token += entrada[a]
-        if(token in diconario):
-            tokens.append([token, diconario[token]])
+        if(token in dicionario):
+            tokens.append([token, dicionario[token]])
         elif(token != ''):
             tokens.append([token, "identificador"])
         
-        if(entrada[a] in diconario):
+        if(entrada[a] in dicionario):
             token = entrada[a]
-            tokens.append([token, diconario[token]])
+            tokens.append([token, dicionario[token]])
             a += 1
 
         if entrada[a]in espacoEQuebraDeLinha and a < finalEntrada:
