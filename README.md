@@ -1,4 +1,4 @@
-Analisador Léxico da Linguagem G
+Analisador Léxico da Linguagem G - Em Desenvolvimento
 
 G = ( {Z,I,D,L,X,K,O,S,E,R,T}, {var, : , id, , , integer, real, ; , :=, if, then,+}, P, Z)
 P:
