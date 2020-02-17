@@ -1,6 +1,5 @@
 Analisador Léxico da Linguagem G - Em Desenvolvimento
 
-Analisador Léxico da Linguagem G - Em Desenvolvimento
 
 
 
