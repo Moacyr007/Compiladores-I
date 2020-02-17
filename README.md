@@ -1,8 +1,11 @@
 Analisador Léxico da Linguagem G - Em Desenvolvimento
 
 G = ( {Z,I,D,L,X,K,O,S,E,R,T}, {var, : , id, , , integer, real, ; , :=, if, then,+}, P, Z)
+
 P:
+
 Z → I S
+
 I → var D
 D → L : K O
 L → id X
