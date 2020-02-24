@@ -3,22 +3,21 @@
 - Compilador para a linguagem G definida abaixo
 
 
-- G = ( {Z,I,D,L,X,K,O,S,E,R,T}, {var, : , id, , , integer, real, ; , :=, if, then,+}, P, Z)
--P:
--Z → I S
--I → var D
--D → L : K O
--L → id X
--X → , L
--X → ε
--K → integer
--K → real
--O → ; D
--O →ε
--S → id := E
--S → if E then S
--E → T R
--R → + T R
--R → ε
--T → id
--A
+<br>G = ( {Z,I,D,L,X,K,O,S,E,R,T}, {var, : , id, , , integer, real, ; , :=, if, then,+}, P, Z)
+<br>P:
+<br>Z → I S
+<br>I → var D
+<br>D → L : K O
+<br>L → id X
+<br>X → , L
+<br>X → ε
+<br>K → integer
+<br>K → real
+<br>O → ; D
+<br>O →ε
+<br>S → id := E
+<br>S → if E then S
+<br>E → T R
+<br>R → + T R
+<br>R → ε
+<br>T → id
