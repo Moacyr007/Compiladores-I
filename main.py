@@ -6,5 +6,4 @@ f = open(path, 'r')
 entrada = f.read()
 
 tokens = analisadorLexico.analisadorLexico(entrada)
-print(tokens)
-analisadorSintatico.analisadorSintatico(tokens)
+entrada_sintaticamente_correta = analisadorSintatico.analisadorSintatico(tokens, entrada)

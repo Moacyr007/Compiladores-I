@@ -2,12 +2,13 @@ import analisadorLexico
 
 count = 0
 
-def analisadorSintatico(tokensl):
+def analisadorSintatico(tokensl ,entrada):
     global tokens 
     tokens = tokensl
     global count
     count = 0
     z()
+    return(entrada)
 
 def erro(recebido, esperado, i):
     raise ValueError("erro, recebeu "+recebido+" mas esperava "+esperado+", item numr:"+str(i))
