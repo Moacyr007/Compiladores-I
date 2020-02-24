@@ -1,6 +1,6 @@
-Analisador Léxico da Linguagem G - Em Desenvolvimento
-
-
+- Em Desenvolvimento - 
+Trabalho da diciplina Compiladores I UFMT
+Compilador para a linguagem G definida abaixo
 
 
 G = ( {Z,I,D,L,X,K,O,S,E,R,T}, {var, : , id, , , integer, real, ; , :=, if, then,+}, P, Z)
