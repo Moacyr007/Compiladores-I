@@ -8,7 +8,7 @@ def analisadorLexico(entrada):
     "+":"soma",
     ":": "dois pontos",
     ",": "virgula",
-    ";": "pronto e virgula",
+    ";": "ponto e virgula",
     ":=": "atribuicao"
     }
     simbolos = [':',',' , ';' , ':=','+']
@@ -50,7 +50,7 @@ def analisadorLexico(entrada):
     for x in tokens:
             print(x[0], "|", x[1] )
 
-    return token
+    return tokens
 
 
     
