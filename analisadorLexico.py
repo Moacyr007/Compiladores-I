@@ -6,7 +6,6 @@ def analisadorLexico(entrada):
     "if": "condicional",
     "then": "acao condicional",
     "+":"soma",
-    ":": "dois pontos",
     ",": "virgula",
     ";": "ponto e virgula",
     ":=": "atribuicao"
@@ -27,6 +26,14 @@ def analisadorLexico(entrada):
             tokens.append([token, dicionario[token]])
             a+=2
         token = ''
+
+        if entrada[a] == ':' and entrada[a+1] != '=':
+            print("lendo dois pontos")
+            print("a:", a)
+            token = ':'
+            tokens.append([token, "dois pontos"])
+            a+=1
+            token = ''
         
         while entrada[a] in numeros or entrada[a] in lentras and a < finalEntrada:
             token += entrada[a]
@@ -45,12 +52,8 @@ def analisadorLexico(entrada):
 
         if entrada[a]in espacoEQuebraDeLinha and a < finalEntrada:
             a+=1
-        if (entrada[a] not in simbolos and entrada[a] not in lentras  and entrada[a] not in numeros) and entrada[a] not in espacoEQuebraDeLinha:
+        if (entrada[a] not in simbolos and entrada[a] not in lentras  and entrada[a] not in numeros and entrada[a] not in espacoEQuebraDeLinha):
             raise ValueError('Erro em:', entrada[a])
     for x in tokens:
             print(x[0], "|", x[1] )
-
     return tokens
-
-
-    
