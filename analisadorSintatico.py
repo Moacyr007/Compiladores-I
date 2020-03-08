@@ -22,10 +22,12 @@ def t():
 
 def r():
     global count
-    if(tokens[count][1] == "soma"):
-        count += 1
-        t()
-        r()
+    print("Count r: ", count)
+    if(count < len(tokens)):
+        if(tokens[count][1] == "soma"):
+            count += 1
+            t()
+            r()
 
 def e():
     t()
@@ -53,7 +55,7 @@ def o():
 
 def k():
     global count
-    if(tokens[count][1] == "tipo"):
+    if(tokens[count][1] == "tipoReal" or tokens[count][1] == "tipoInteger"):
         count += 1
     else:
         erro(tokens[count][1],"integer ou real", count)

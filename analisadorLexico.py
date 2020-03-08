@@ -1,8 +1,8 @@
 def analisadorLexico(entrada):
     dicionario = {
     "var" : "declaracao",
-    "integer": "tipo",
-    "real": "tipo",
+    "integer": "tipoInteger",
+    "real": "tipoReal",
     "if": "condicional",
     "then": "acao condicional",
     "+":"soma",
@@ -28,8 +28,6 @@ def analisadorLexico(entrada):
         token = ''
 
         if entrada[a] == ':' and entrada[a+1] != '=':
-            print("lendo dois pontos")
-            print("a:", a)
             token = ':'
             tokens.append([token, "dois pontos"])
             a+=1
