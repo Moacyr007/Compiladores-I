@@ -60,12 +60,10 @@ def o():
 def k():
     global count
     if(tokens[count][1] == "tipoReal" or tokens[count][1] == "tipoInteger"):
-        analisadorSemantico.inserir_tipo_id(tokens[count][0], tokens[count][1])
+        analisadorSemantico.inserir_tipo_id(tokens[count][0])
         count += 1
     else:
         erro(tokens[count][1],"integer ou real", count)
-
-    analisadorSemantico.inserir_tipo_id(tokens[count][0],tokens[count][1])
 
 def x():
     global count

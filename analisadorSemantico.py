@@ -1,20 +1,29 @@
+global tabelaSimbolos
+global tabelaVerificacaoTipos
 tabelaSimbolos = []
 tabelaVerificacaoTipos = []
 
 #{cadeia, tipoTOken, tipoIdentificador}
 
 def inserir_id(cadeia, tipoToken):
-    tabelaSimbolos.append([cadeia, tipoToken])
+    global tabelaSimbolos
+    tabelaSimbolos.append([cadeia, tipoToken, ""])
+    print(tabelaSimbolos)
 
-def inserir_tipo_id(cadeia, tipo):
+def inserir_tipo_id(tipo):
+    global tabelaSimbolos
     for a in range(len(tabelaSimbolos)):
-        if(tabelaSimbolos[a][0] == cadeia):
+        print("loop inserir_tipo_id")
+        print(" tipo", tipo)
+        print("tabela de simbolos: ",tabelaSimbolos)
+        if(tabelaSimbolos[a][2] == ""):
+            print("dentro if inserir_tipo_id")
             tabelaSimbolos[a][2] = tipo
-
-    ValueError("A variável "+cadeia+" não foi declarada")  
+    print(tabelaSimbolos)
 
 #verifica se um id existe na tabela de simbolos
 def verificar_declaracao(cadeia):
+    global tabelaSimbolos
     flagDeclarado = 0
     for a in range(len(tabelaSimbolos)):
         if(tabelaSimbolos[a][0] == cadeia):
@@ -25,6 +34,7 @@ def verificar_declaracao(cadeia):
 
 #verifica se os tipos da tabelaVErificacaoTIpos são os mesmos
 def verificar_tipos():
+    global tabelaVerificacaoTipos
     tipo = tabelaVerificacaoTipos[0][1]
     for a in range(len(tabelaVerificacaoTipos)):
         if(tabelaVerificacaoTipos[a][1] == tipo):
@@ -35,10 +45,14 @@ def verificar_tipos():
 
 #inseri um identificador na tabela de verificação
 def inserir_verificacao(cadeia):
+    global tabelaSimbolos
+    global tabelaVerificacaoTipos
+    flag_verificacao = 0
     for a in range(len(tabelaSimbolos)):
         if(tabelaSimbolos[a][0] == cadeia):
             tipo = tabelaSimbolos[a][1]
-        else:
-            raise ValueError("A variável "+cadeia+" não foi declarada")
+            flag_verificacao = 1
+    if(flag_verificacao == 0):
+        raise ValueError("A variável "+cadeia+" não foi declarada")
     tabelaVerificacaoTipos.append([cadeia, tipo])
 
