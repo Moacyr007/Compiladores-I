@@ -1,5 +1,5 @@
 import analisadorLexico
-
+import analisadorSemantico
 count = 0
 
 def analisadorSintatico(tokensl ,entrada):
@@ -69,6 +69,7 @@ def x():
 def l():
     global count
     if(tokens[count][1] == "identificador"):
+        analisadorSemantico.inserir_id(tokens[count][0])
         count += 1
         x()
     else:
