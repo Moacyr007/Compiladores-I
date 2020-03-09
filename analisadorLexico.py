@@ -19,7 +19,7 @@ def analisadorLexico(entrada):
     finalEntrada = tamanhoEntrada-1
     tokens = []
     a = 0
-    while a < tamanhoEntrada-1:
+    while a < tamanhoEntrada:
         
         if entrada[a] == ':' and entrada[a+1] == '=':
             token = ':='
@@ -37,6 +37,18 @@ def analisadorLexico(entrada):
             token += entrada[a]
             a += 1
         if a == finalEntrada:
+            print("ENTROU FINAL ENTRADA")
+            token = entrada[a]
+            if(entrada[a] in dicionario):
+                token = entrada[a]
+                tokens.append([token, dicionario[token]])
+                a += 1
+            elif(token != ''):
+                tokens.append([token, "identificador"])
+            break
+
+
+
             token += entrada[a]
         if(token in dicionario):
             tokens.append([token, dicionario[token]])

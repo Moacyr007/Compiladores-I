@@ -37,16 +37,20 @@ def e():
 
 def s():
     global count
-    if(tokens[count][1] == "identificador" and tokens[count+1][1] == "atribuicao"):
+    if(tokens[count][1] == "identificador"):
         analisadorSemantico.verificar_declaracao(tokens[count][0])
-        count += 2
-        e()
+        count += 1
+        if(tokens[count][1] == "atribuicao"):
+            count += 1
+            e()
     elif(tokens[count][1] == "condicional"):
         count += 1
         e()
         if(tokens[count][1] == "acao condicional"):
             count += 1
             s()
+        else:
+            erro(tokens[count][1],"identificador", count)
     else:
         erro(tokens[count][1],"identificador", count)
 
