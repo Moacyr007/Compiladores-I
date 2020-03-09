@@ -16,6 +16,7 @@ def erro(recebido, esperado, i):
 def t():
     global count
     if(tokens[count][1] == "identificador"):
+        analisadorSemantico.inserir_verificacao(tokens[count][0])
         count+=1
     else:
         erro(tokens[count][1],"identificador", count)
@@ -28,6 +29,8 @@ def r():
             count += 1
             t()
             r()
+        else:
+            analisadorSemantico.verificar_tipos()
 
 def e():
     t()
@@ -36,6 +39,7 @@ def e():
 def s():
     global count
     if(tokens[count][1] == "identificador" and tokens[count+1][1] == "atribuicao"):
+        analisadorSemantico.verificar_declaracao(tokens[count][0])
         count += 2
         e()
     elif(tokens[count][1] == "condicional"):
@@ -56,9 +60,12 @@ def o():
 def k():
     global count
     if(tokens[count][1] == "tipoReal" or tokens[count][1] == "tipoInteger"):
+        analisadorSemantico.inserir_tipo_id(tokens[count][0], tokens[count][1])
         count += 1
     else:
         erro(tokens[count][1],"integer ou real", count)
+
+    analisadorSemantico.inserir_tipo_id(tokens[count][0],tokens[count][1])
 
 def x():
     global count
@@ -69,7 +76,7 @@ def x():
 def l():
     global count
     if(tokens[count][1] == "identificador"):
-        analisadorSemantico.inserir_id(tokens[count][0])
+        analisadorSemantico.inserir_id(tokens[count][0], tokens[count][1])
         count += 1
         x()
     else:

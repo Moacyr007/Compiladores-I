@@ -1,7 +1,7 @@
 import analisadorLexico
 import analisadorSintatico
 
-path = r'D:\Projetos\analisadorLexicoSecreto\entradaCodigo.txt'
+path = r'entradaCodigo.txt'
 f = open(path, 'r')
 entrada = f.read()
 
