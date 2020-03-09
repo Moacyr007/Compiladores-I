@@ -8,18 +8,12 @@ tabelaVerificacaoTipos = []
 def inserir_id(cadeia, tipoToken):
     global tabelaSimbolos
     tabelaSimbolos.append([cadeia, tipoToken, ""])
-    print(tabelaSimbolos)
 
 def inserir_tipo_id(tipo):
     global tabelaSimbolos
     for a in range(len(tabelaSimbolos)):
-        print("loop inserir_tipo_id")
-        print(" tipo", tipo)
-        print("tabela de simbolos: ",tabelaSimbolos)
         if(tabelaSimbolos[a][2] == ""):
-            print("dentro if inserir_tipo_id")
             tabelaSimbolos[a][2] = tipo
-    print(tabelaSimbolos)
 
 #verifica se um id existe na tabela de simbolos
 def verificar_declaracao(cadeia):
