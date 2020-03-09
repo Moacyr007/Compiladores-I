@@ -34,7 +34,7 @@ def verificar_tipos():
         if(tabelaVerificacaoTipos[a][1] == tipo):
             print("")
         else:
-            raise ValueError("A variável "+cadeia+" não foi declarada")
+            raise ValueError("Operação com tipos diferentes")
     tabelaVerificacaoTipos = []
 
 #inseri um identificador na tabela de verificação

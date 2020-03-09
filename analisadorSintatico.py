@@ -23,7 +23,6 @@ def t():
 
 def r():
     global count
-    print("Count r: ", count)
     if(count < len(tokens)):
         if(tokens[count][1] == "soma"):
             count += 1
@@ -102,5 +101,5 @@ def i():
 def z():
     i()
     s()
-
-
+    if(len(tokens) > count):
+         raise ValueError("Esperava fim do código mas ainda tinham mais tolkens")
