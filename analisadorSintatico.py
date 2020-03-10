@@ -52,9 +52,9 @@ def s():
             count += 1
             s()
         else:
-            erro(tokens[count][1],"identificador", count)
+            erro(tokens[count][1],"acao condicional", count)
     else:
-        erro(tokens[count][1],"identificador", count)
+        erro(tokens[count][1],"condicional", count)
 
 def o():
     global count
