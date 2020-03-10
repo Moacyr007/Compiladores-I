@@ -102,7 +102,7 @@ def i():
         count += 1
         d()
     else:
-        erro(tokens[count][1],"identificador", count)
+        erro(tokens[count][1],"declaracao", count)
 
 def z():
     i()
