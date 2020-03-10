@@ -44,9 +44,11 @@ def inserir_verificacao(cadeia):
     flag_verificacao = 0
     for a in range(len(tabelaSimbolos)):
         if(tabelaSimbolos[a][0] == cadeia):
-            tipo = tabelaSimbolos[a][1]
+            tipo = tabelaSimbolos[a][2]
             flag_verificacao = 1
     if(flag_verificacao == 0):
         raise ValueError("A variável "+cadeia+" não foi declarada")
     tabelaVerificacaoTipos.append([cadeia, tipo])
 
+def printTabelaVerificacaoTipos():
+    print(tabelaVerificacaoTipos);

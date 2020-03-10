@@ -39,10 +39,12 @@ def s():
     global count
     if(tokens[count][1] == "identificador"):
         analisadorSemantico.verificar_declaracao(tokens[count][0])
+        analisadorSemantico.inserir_verificacao(tokens[count][0])
         count += 1
         if(tokens[count][1] == "atribuicao"):
             count += 1
             e()
+            analisadorSemantico.verificar_tipos()
     elif(tokens[count][1] == "condicional"):
         count += 1
         e()
