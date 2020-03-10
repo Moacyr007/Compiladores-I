@@ -108,4 +108,4 @@ def z():
     i()
     s()
     if(len(tokens) > count):
-         raise ValueError("Esperava fim do código mas ainda tinham mais tolkens")
+         raise ValueError("Esperava fim do código mas ainda tinham mais tokens")
