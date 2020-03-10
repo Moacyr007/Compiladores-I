@@ -14,7 +14,6 @@ def inserir_id(cadeia, tipoToken):
     for a in range(len(tabelaSimbolos)):
         if(tabelaSimbolos[a][0] == cadeia):
             flagDeclarado = 1
-            return True
     if(flagDeclarado == 1):
         raise ValueError("A variavel "+cadeia+" ja foi declarada")
 
