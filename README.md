@@ -1,4 +1,3 @@
-- Em Desenvolvimento 
 - Trabalho da diciplina Compiladores I UFMT
 - Compilador para a linguagem G definida abaixo
 
