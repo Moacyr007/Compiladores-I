@@ -19,6 +19,7 @@ def analisadorLexico(entrada):
     finalEntrada = tamanhoEntrada-1
     tokens = []
     a = 0
+    linha = 0
     while a < tamanhoEntrada:
         
         if entrada[a] == ':' and entrada[a+1] == '=':
@@ -61,9 +62,12 @@ def analisadorLexico(entrada):
             a += 1
 
         if entrada[a]in espacoEQuebraDeLinha and a < finalEntrada:
+            if(entrada[a] == '\n'):
+                linha += 1
             a+=1
         if (entrada[a] not in simbolos and entrada[a] not in lentras  and entrada[a] not in numeros and entrada[a] not in espacoEQuebraDeLinha):
-            raise ValueError('Erro em:', entrada[a])
+            raise ValueError('Erro em na linha '+ str(linha) + ", o token '"+ entrada[a]+"' não pertence a linguagem")
+
     for x in tokens:
             print(x[0], "|", x[1] )
     return tokens
