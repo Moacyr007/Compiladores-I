@@ -28,8 +28,8 @@ def r():
             count += 1
             t()
             r()
-        else:
-            analisadorSemantico.verificar_tipos()
+       # else:
+       #     analisadorSemantico.verificar_tipos()
 
 def e():
     t()
@@ -44,7 +44,7 @@ def s():
         if(tokens[count][1] == "atribuicao"):
             count += 1
             e()
-            analisadorSemantico.verificar_tipos()
+            analisadorSemantico.verificar_tipos() #mapear erro sem if
     elif(tokens[count][1] == "condicional"):
         count += 1
         e()

@@ -52,6 +52,8 @@ def inserir_verificacao(cadeia):
     global tabelaSimbolos
     global tabelaVerificacaoTipos
     flag_verificacao = 0
+
+    #verifica se a variavel nao foi declarada
     for a in range(len(tabelaSimbolos)):
         if(tabelaSimbolos[a][0] == cadeia):
             tipo = tabelaSimbolos[a][2]
